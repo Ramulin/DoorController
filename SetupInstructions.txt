@@ -1,0 +1,43 @@
+=======  The BREADBOARD CIRCUIT =======
+
+- The Onion will not boot if the Hall Effect sensor is connected to the GPIO.
+
+- Hall Effect Sensor chip
+http://www.vetco.net/catalog/product_info.php?products_id=13615
+Hall-Effect Sensor Module for Arduino
+
+Detect the proximity of a magnet with this Hall Effect sensor module. When the magnetic field rises above a threshold level, the open-collector output transistor switches on, which pulls the logic-compatible output low and illuminates the onboard LED indicator.
+Its fast (<2us) switching time and built-in hysteresis make it ideal as a position sensor for a motor shaft or a robotic arm.
+The turn-on threshold is 35-450 Gauss, the minimum hysteresis is 20 Gauss, and the operating voltage range is 4.5 - 24 volts.
+
+This module uses the Allegro MicroSystems A3144EUA sensor. It has a 3 pin interface, signal, V+ and GND.
+All pins are standard 0.1" spaced and work great with our BLS 0.1" / 2.54mm series connectors.
+
+To use this sensor/switch, place a 10K pull-up resistor between the "S" pin and the middle pin (+), connect the "-" pin to ground. Supply voltage to the middle pin. The "S" pin will go low (gets pulled to ground) and the onboard LED indicator will turn on when a magnet is brought near. 
+
+
+
+
+=======  THE ONION OMEGA =========
+Follow the GetStarted
+https://wiki.onion.io/Get-Started
+
+(make sure to do oupgrade)
+
+A. Setup Ruby
+
+1. Update the opkg utility and list of available libraries
+opkg update   
+
+2. Install ruby
+opkg install ruby
+opkg install ruby-datetime
+
+B. Setup Samba share
+opkg install samba36-client
+--> use command below to find current version
+--> opkg list *samba* | more 
+
+Use configuration instructions here: https://wiki.onion.io/Tutorials/Sharing-with-Samba
+
+Macintosh sees the share as:  smb://omega-10CB.local
